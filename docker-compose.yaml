@@ -1,11 +1,12 @@
-
-version: '3.8'
+version: "3.8"
 services:
-  web:
+  nextjs:
+    container_name: nextjs
     build:
       context: ./
       dockerfile: ./docker/node/Dockerfile
       target: runner
+    user: root
     volumes:
       - .:/app
     command: npm run dev
