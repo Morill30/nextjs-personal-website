@@ -34,7 +34,7 @@ export default function SideBar({ children }: { children: ReactElement }) {
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <a href="https://flowbite.com/" className="flex items-center mb-5">
             <Image
-              src="/webjem-logo.png"
+              src="/webjems-logo.png"
               height={28}
               width={33}
               className="h-6 mr-3 sm:h-7"
