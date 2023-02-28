@@ -36,7 +36,7 @@ export default function ProfileHeader() {
               Jean Morillo
             </span>
             <span className="font-normal text-[14px] text-gray-500">
-              Software Engineer
+              I&apos;m a Software Engineer in Puerto Rico
             </span>
           </div>
         </div>
