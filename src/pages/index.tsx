@@ -1,6 +1,6 @@
 import Header from "@/components/Profile/Header";
 import SummaryCard from "@/components/Profile/Cards/SummaryCard";
-import EducationCard from "@/components/Profile/Cards/EducationCard";
+import SkillsCard from "@/components/Profile/Cards/SkillsCard";
 
 export default function Home() {
   return (
@@ -9,10 +9,10 @@ export default function Home() {
         <Header />
         <div
           id="profile-content"
-          className="pt-10 p-2 md:p-16 flex flex-wrap gap-4"
+          className="px-2 md:px-16 flex flex-wrap gap-4 py-10"
         >
           <SummaryCard />
-          <EducationCard />
+          <SkillsCard />
         </div>
       </main>
     </>
