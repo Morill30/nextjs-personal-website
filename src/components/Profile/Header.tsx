@@ -31,7 +31,7 @@ export default function ProfileHeader() {
               }
             />
           </div>
-          <div className="flex flex-col ml-6">
+          <div className="flex flex-col md:ml-6 md:items-start items-center">
             <span className="font-bold text-[20px] text-gray-700">
               Jean Morillo
             </span>
