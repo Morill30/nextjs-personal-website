@@ -15,17 +15,17 @@ export default function Home() {
       items: 5,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1400 },
       partialVisibilityGutter: 40,
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1400, min: 768 },
       partialVisibilityGutter: 40,
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       partialVisibilityGutter: 40,
       items: 1,
     },
@@ -48,57 +48,34 @@ export default function Home() {
             <Icons type="Summary" className="ml-2" />
           </h5>
           <Carousel responsive={responsive} ssr swipeable partialVisible={true}>
-            <VideoCard iconType="Docker" title="Docker Tutorial">
-              <>
-                <a href="https://youtu.be/pTFZFxd4hOI">
-                  <Image
-                    src="/docker-image.jpeg"
-                    fill
-                    alt="Mosh Docker Video"
-                    style={{ objectFit: "cover" }}
-                  />
-                </a>
-              </>
-            </VideoCard>
+            <VideoCard
+              iconType="Docker"
+              title="Docker Tutorial"
+              href="https://youtu.be/pTFZFxd4hOI"
+              thumbnail="/docker-image.jpeg"
+              alt="Recomendation video"
+            />
             <VideoCard
               iconType="Google-Flat"
               title="Crocodile Hunter | Gabriel Iglesias"
-            >
-              <a href="https://youtu.be/_M1VgfS4BVo">
-                <Image
-                  src="/gabriel-iglesias.jpeg"
-                  fill
-                  alt="Mosh Docker Video"
-                  style={{ objectFit: "cover" }}
-                />
-              </a>
-            </VideoCard>
+              href="https://youtu.be/_M1VgfS4BVo"
+              thumbnail="/gabriel-iglesias.jpeg"
+              alt="Gabriel Igleasias funny video"
+            />
             <VideoCard
               iconType="Google-Flat"
-              title="Crocodile Hunter | Gabriel Iglesias"
-            >
-              <a href="https://youtu.be/_M1VgfS4BVo">
-                <Image
-                  src="/gabriel-iglesias.jpeg"
-                  fill
-                  alt="Mosh Docker Video"
-                  style={{ objectFit: "cover" }}
-                />
-              </a>
-            </VideoCard>
+              title="Zelda Music"
+              href="https://youtu.be/MXDF0wVcWfA"
+              thumbnail="/zelda-music.png"
+              alt="Zelda Music video"
+            />
             <VideoCard
               iconType="Google-Flat"
-              title="Crocodile Hunter | Gabriel Iglesias"
-            >
-              <a href="https://youtu.be/_M1VgfS4BVo">
-                <Image
-                  src="/gabriel-iglesias.jpeg"
-                  fill
-                  alt="Mosh Docker Video"
-                  style={{ objectFit: "cover" }}
-                />
-              </a>
-            </VideoCard>
+              title="Sin Ti | by Macapo"
+              href="https://youtu.be/TChDg-9UkeU"
+              thumbnail="/sinti.jpeg"
+              alt="Macapo music video"
+            />
           </Carousel>
         </div>
       </main>
