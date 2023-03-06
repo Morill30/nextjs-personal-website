@@ -1,8 +1,14 @@
-import type { ReactElement } from "react";
+import { createRef, ReactElement, useRef } from "react";
 import Image from "next/image";
 import Icons from "@/styles/icons/Icons";
 import Link from "next/link";
 export default function SideBar({ children }: { children: ReactElement }) {
+  const button = createRef<HTMLButtonElement>();
+  const handleClick = () => {
+    if (button.current && window.innerWidth < 768) {
+      button.current.click();
+    }
+  };
   return (
     <>
       <div className="flex items-center justify-between md:hidden">
@@ -11,6 +17,7 @@ export default function SideBar({ children }: { children: ReactElement }) {
           data-drawer-toggle="logo-sidebar"
           aria-controls="logo-sidebar"
           type="button"
+          ref={button}
           className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
           <span className="sr-only">Open sidebar</span>
@@ -63,6 +70,7 @@ export default function SideBar({ children }: { children: ReactElement }) {
           <ul className="space-y-2">
             <li>
               <Link
+                onClick={handleClick}
                 href="/"
                 className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
@@ -89,7 +97,8 @@ export default function SideBar({ children }: { children: ReactElement }) {
             </li>
             <li>
               <Link
-                href="/"
+                onClick={handleClick}
+                href="/diagram"
                 className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
@@ -102,7 +111,7 @@ export default function SideBar({ children }: { children: ReactElement }) {
                   <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                   <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
-                <span className="ml-3 line-through">Dashboard</span>
+                <span className="ml-3">Site Diagram</span>
               </Link>
             </li>
             <li>
@@ -120,15 +129,12 @@ export default function SideBar({ children }: { children: ReactElement }) {
                 >
                   <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap line-through flex items-center">
+                <span className="flex-1 ml-3 whitespace-nowrap flex items-center">
                   Experiences{" "}
                   <Icons
                     type="up-right-arrow"
                     className="fill-black h-[12px] ml-2"
                   />
-                </span>
-                <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                  Pro
                 </span>
               </a>
             </li>
