@@ -4,7 +4,6 @@ import SkillsCard from "@/components/Profile/Cards/SkillsCard";
 import Carousel from "react-multi-carousel";
 import VideoCard from "@/components/Profile/Cards/VideoCard";
 import Icons from "@/styles/icons/Icons";
-import Image from "next/image";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Home() {
