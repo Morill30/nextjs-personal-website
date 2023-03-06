@@ -26,11 +26,13 @@ export default function VideoCard({
         />
       </a>
       <div className="absolute flex items-center justify-between p-5 w-full h-20 top-full -mt-20 left-0 backdrop-blur-md bg-white/30 z-10">
-        <span className="text-white font-bold flex items-center">
-          <Icons type={iconType} />
-          {title}
+        <span className="text-white font-bold flex items-center w-min">
+          <Icons type={iconType} className=" flex-shrink-0" />
+          <span className="text-ellipsis overflow-hidden whitespace-nowrap w-[150px] md:w-full">
+            {title}
+          </span>
         </span>
-        <Icons type="up-right-arrow" className="fill-slate-400"></Icons>
+        <Icons type="up-right-arrow" className="fill-slate-100"></Icons>
       </div>
     </div>
   );
