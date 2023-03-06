@@ -7,7 +7,7 @@ export default function Diagram() {
     <main className={`relative flex flex-col`}>
       <TopBackgroundHeader />
       <div className=" -mt-24 z-10">
-        <h2 className="mb-10 font-thin tracking-wide text-md text-white flex items-center justify-center md:justify-start">
+        <h2 className=" md:ml-10 mb-10 font-thin tracking-wide text-md text-white flex items-center justify-center md:justify-start">
           <Icons type="aws" className="h-14 fill-orange-400 mt-3 mr-3" />
           Site Diagram
         </h2>
