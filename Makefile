@@ -9,3 +9,17 @@ ssl-create:
 	@sudo sh ./scripts/make-cert.sh
 	@echo ""
 	@echo "Done!"
+
+deploy-images: build-images deploy-next deploy-nginx
+
+build-images:
+	@docker compose -f ./docker-compose-build.yaml build
+
+deploy-nginx:
+	@docker push 028352660330.dkr.ecr.us-east-1.amazonaws.com/nginx-psite:latest
+
+deploy-next:
+	@docker push 028352660330.dkr.ecr.us-east-1.amazonaws.com/nextjs-psite:latest
+
+ecs-deploy:
+	@aws ecs update-service --cluster Personal-Website-Cluster --service personal-site-service --force-new-deployment
