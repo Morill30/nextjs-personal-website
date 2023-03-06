@@ -10,7 +10,10 @@ ssl-create:
 	@echo ""
 	@echo "Done!"
 
-deploy-images: build-images deploy-next deploy-nginx
+deploy-images: build-images ecr-login deploy-next deploy-nginx
+
+ecr-login:
+	@aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 028352660330.dkr.ecr.us-east-1.amazonaws.com
 
 build-images:
 	@docker compose -f ./docker-compose-build.yaml build
