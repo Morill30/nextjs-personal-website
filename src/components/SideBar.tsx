@@ -2,6 +2,7 @@ import { createRef, ReactElement, useRef } from "react";
 import Image from "next/image";
 import Icons from "@/styles/icons/Icons";
 import Link from "next/link";
+import Footer from "./Footer";
 export default function SideBar({ children }: { children: ReactElement }) {
   const button = createRef<HTMLButtonElement>();
   const handleClick = () => {
@@ -202,7 +203,10 @@ export default function SideBar({ children }: { children: ReactElement }) {
           </ul>
         </div>
       </aside>
-      <div className="p-4 md:ml-64">{children}</div>
+      <div className="p-4 md:ml-64">
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }
