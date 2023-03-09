@@ -2,9 +2,15 @@ import Head from "next/head";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/layout";
+import Script from "next/script";
+import { useEffect } from "react";
+import * as ga from "@/utils/googleAnalytics/ga";
 import "flowbite";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    ga.pageview(window.location.href);
+  });
   return (
     <>
       <Head>
@@ -33,6 +39,21 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-T55DNTQ7Z6"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-T55DNTQ7Z6', {
+              page_path: window.location.pathname,
+          });
+        `}
+      </Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>
